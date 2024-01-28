@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+- name: 
+yay -S hyprland kitty #wm and term
+yay -S mako # notification manager
+yay -S pipewire wireplumber # support screensharing
+yay -S polkit-kde-agent # auth agent
+yay -S qt5-wayland qt6-wayland # qt wayland support libs
+yay -S waybar # gtk status bar
+yay -S tofi # app launcher AUR
+
+# exec-once=waybar
+# exec-once=mako
+# exec-once=/usr/lib/polkit-kde-authentication-agent-1
