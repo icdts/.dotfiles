@@ -19,7 +19,7 @@
 - name: Install auth agent
   become: true
   community.general.pacman:
-    name: ['polkiit-kde-agent']
+    name: ['polkit-kde-agent']
     state: latest
   tags: *wmtags
 - name: Install status bar
