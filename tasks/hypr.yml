@@ -31,7 +31,7 @@
 - name: Install app launcher - runtime deps
   become: true
   community.general.pacman:
-    name: ['freetype', 'harfbuz', 'cair', 'pang', 'waylan', 'libxkbcommon']
+    name: ['freetype2', 'harfbuz', 'cair', 'pang', 'waylan', 'libxkbcommon']
     state: latest
   tags: *wmtags
 - name: Install app launcher - buildtime deps
