@@ -1,0 +1,16 @@
+- name: Install build packages
+  become: true
+  community.general.pacman:
+    name: ['base-devel', 'git', 'wget', 'curl', 'htop', 'tmux', 'fd', 'go', 'jq', 'openssh', 'fzf', 'stow', 'tldr', 'ripgrep']
+    state: latest
+  tags:
+    - install
+    - core
+- name: Install basic packages
+  become: true
+  community.general.pacman:
+    name: ['sudo', 'firefox', 'chromium', 'ttf-inconsolata', 'ttf-inconsolata-nerd']
+    state: latest
+  tags:
+    - install
+    - core

@@ -1,0 +1,30 @@
+- name: workspace exists
+  stat:
+    path: "{{ workspace}}"
+  register: workspace_exists
+  tags:
+    - workspace
+- name: cp-rs exists
+  stat:
+    path: "{{ workspace }}/cp-rs"
+  register: cprs
+  tags:
+    - workspace
+- name: create workspace
+  shell: mkdir "{{ workspace }}"
+  tags:
+    - workspace
+  when: workspace_exists.stat.exists == False
+- name: cp-rs fetch bare repo
+  ansible.builtin.git:
+    repo: "git@github.com:icdts/cp-rs.git"
+    bare: true
+    dest: "{{ workspace }}/cp-rs"
+  tags:
+    - workspace
+  when: cprs.stat.exists == False
+- name: cp-rs checkout
+  shell: cd {{ workspace }}/cp-rs && git fetch && git worktree add master master
+  tags:
+    - workspace
+  when: cprs.stat.exists == False

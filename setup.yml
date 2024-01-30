@@ -1,0 +1,23 @@
+- hosts: localhost
+  vars:
+    source_key: "./.ssh/id_ed25519"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    user: "{{ ansible_user_id }}"
+    workspace: "{{ lookup('env', 'HOME') }}/workspace"
+  pre_tasks:
+  - name: update pacman
+    become: true
+    community.general.pacman:
+      update_cache: yes
+      upgrade: yes
+    tags:
+        - install
+        - core
+  tasks:
+    - import_tasks: tasks/ssh.yml
+    - import_tasks: tasks/core.yml
+    - import_tasks: tasks/git.yml
+    - import_tasks: tasks/nvim.yml
+    - import_tasks: tasks/zsh.yml
+    - import_tasks: tasks/hypr.yml
+    - import_tasks: tasks/workspace.yml

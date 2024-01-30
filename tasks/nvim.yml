@@ -1,0 +1,8 @@
+- name: Install nvim 
+  become: true
+  community.general.pacman:
+    name: ['neovim']
+    state: latest
+  tags:
+    - install
+    - nvim 

@@ -1,0 +1,36 @@
+- name: Install wm and term 
+  become: true
+  community.general.pacman:
+    name: ['hyprland', 'kitty']
+    state: latest
+  tags: &wmtags ['install','wm']
+- name: Install notification manager
+  become: true
+  community.general.pacman:
+    name: ['mako']
+    state: latest
+  tags: *wmtags
+- name: Install screensharing support
+  become: true
+  community.general.pacman:
+    name: ['pipewire', 'wireplumber']
+    state: latest
+  tags: *wmtags
+- name: Install auth agent
+  become: true
+  community.general.pacman:
+    name: ['polkiit-kde-agent']
+    state: latest
+  tags: *wmtags
+- name: Install status bar
+  become: true
+  community.general.pacman:
+    name: ['waybar']
+    state: latest
+  tags: *wmtags
+- name: Install app launcher
+  become: true
+  community.general.pacman:
+    name: ['tofi']
+    state: latest
+  tags: *wmtags
