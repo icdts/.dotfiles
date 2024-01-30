@@ -49,6 +49,5 @@
     dest: "{{ lookup('env','HOME') }}/tofi"
   tags: *wmtags
 - name: Install app launcher - build 
-  ansible.builtin.git:
-    shell: "cd {{ lookup('env','HOME') }}/tofi && meson build && ninja -C build install"
+  shell: "cd {{ lookup('env','HOME') }}/tofi && meson build && ninja -C build install"
   tags: *wmtags
