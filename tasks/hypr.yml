@@ -37,7 +37,7 @@
 - name: Install app launcher - buildtime deps
   become: true
   community.general.pacman:
-    name: ['meso', 'scdo', 'wayland-protocols']
+    name: ['meson', 'scdoc', 'wayland-protocols']
     state: latest
   tags: *wmtags
 - name: Install app launcher - remove git if existing
