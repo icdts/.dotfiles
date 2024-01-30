@@ -31,13 +31,13 @@
 - name: Install app launcher - runtime deps
   become: true
   community.general.pacman:
-    name: ['freetype2 harfbuzz cairo pango wayland libxkbcommon']
+    name: ['freetype', 'harfbuz', 'cair', 'pang', 'waylan', 'libxkbcommon']
     state: latest
   tags: *wmtags
 - name: Install app launcher - buildtime deps
   become: true
   community.general.pacman:
-    name: ['meson scdoc wayland-protocols']
+    name: ['meso', 'scdo', 'wayland-protocols']
     state: latest
   tags: *wmtags
 - name: Install app launcher - remove git if existing
