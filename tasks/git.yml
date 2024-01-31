@@ -1,6 +1,6 @@
 - name: sym link .gitconfig
   file:
-    src: "~/.dotfiles/.gitconfig"
-    dest: "~/"
+    src: "{{ lookup('env', 'HOME') }}/.dotfiles/.gitconfig"
+    dest: "{{ lookup('env', 'HOME') }}"
     state: link
   tags: *tags_for_zsh_tasks
