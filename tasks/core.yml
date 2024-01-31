@@ -14,6 +14,14 @@
   tags:
     - install
     - core
+- name: touch .config dir
+  file:
+    dest: "{{ lookup('env', 'HOME') }}/.config"
+    mode: 0700
+    state: directory
+  tags:
+    - install
+    - core
 # - name: sym link .config
 #   file:
 #     src: "~/.dotfiles/.config/"
