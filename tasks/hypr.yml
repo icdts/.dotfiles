@@ -52,3 +52,9 @@
   become: true
   shell: "cd {{ lookup('env','HOME') }}/tofi && meson build && ninja -C build install"
   tags: *wmtags
+- name: sym link hyperconfig
+  file:
+    src: "{{ lookup('env', 'HOME') }}/.dotfiles/hypr"
+    dest: "{{ lookup('env', 'HOME') }}/.config/hypr"
+    state: link
+  tags: *wmtags

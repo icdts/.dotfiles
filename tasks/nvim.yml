@@ -6,3 +6,11 @@
   tags:
     - install
     - nvim 
+- name: sym link nvim config
+  file:
+    src: "{{ lookup('env', 'HOME') }}/.dotfiles/nvim"
+    dest: "{{ lookup('env', 'HOME') }}/.config/nvim"
+    state: link
+  tags:
+    - install
+    - nvim 
