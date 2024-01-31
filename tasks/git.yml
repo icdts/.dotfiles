@@ -1,28 +1,6 @@
-- name: Git setup email
-  git_config:
-    name: user.email
-    scope: global
-    value: "icandothings@gmail.com"
-  tags:
-    - git-personal
-- name: Git setup name
-  git_config:
-    name: user.name
-    scope: global
-    value: "icdts"
-  tags:
-    - git-personal
-- name: git setup mmm email
-  git_config:
-    name: user.email
-    scope: global
-    value: "rnolan@mmm.com"
-  tags:
-    - git-mmm
-- name: Git setup mmm name
-  git_config:
-    name: user.name
-    scope: global
-    value: "A447VZZ"
-  tags:
-    - git-mmm
+- name: sym link .gitconfig
+  file:
+    src: "~/.dotfiles/.gitconfig"
+    dest: "~/"
+    state: link
+  tags: *tags_for_zsh_tasks

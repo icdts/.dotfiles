@@ -23,3 +23,15 @@
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags: *tags_for_zsh_tasks
+- name: sym link .zshrc
+  file:
+    src: "~/.dotfiles/.zshrc"
+    dest: "~/"
+    state: link
+  tags: *tags_for_zsh_tasks
+- name: sym link .zsh_profile
+  file:
+    src: "~/.dotfiles/.zsh_profile"
+    dest: "~/"
+    state: link
+  tags: *tags_for_zsh_tasks

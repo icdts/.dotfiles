@@ -14,3 +14,8 @@
   tags:
     - install
     - core
+# - name: sym link .config
+#   file:
+#     src: "~/.dotfiles/.config/"
+#     dest: "~/.config"
+#     state: link
