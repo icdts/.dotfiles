@@ -1,7 +1,7 @@
 - name: sym link .gitconfig
   file:
     src: "{{ lookup('env', 'HOME') }}/.dotfiles/.gitconfig"
-    dest: "{{ lookup('env', 'HOME') }}/.gitconfig
+    dest: "{{ lookup('env', 'HOME') }}/.gitconfig"
     state: link
   tags:
     - install
