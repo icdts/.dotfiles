@@ -26,12 +26,12 @@
 - name: sym link .zshrc
   file:
     src: "~/.dotfiles/.zshrc"
-    dest: "~/"
+    dest: "~/.zshrc"
     state: link
   tags: *tags_for_zsh_tasks
 - name: sym link .zsh_profile
   file:
     src: "~/.dotfiles/.zsh_profile"
-    dest: "~/"
+    dest: "~/.zsh_profile"
     state: link
   tags: *tags_for_zsh_tasks
