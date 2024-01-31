@@ -3,4 +3,6 @@
     src: "{{ lookup('env', 'HOME') }}/.dotfiles/.gitconfig"
     dest: "{{ lookup('env', 'HOME') }}"
     state: link
-  tags: *tags_for_zsh_tasks
+  tags:
+    - install
+    - git
