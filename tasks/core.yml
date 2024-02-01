@@ -9,7 +9,7 @@
 - name: Install basic packages
   become: true
   community.general.pacman:
-    name: ['sudo', 'firefox', 'chromium', 'ttf-inconsolata', 'ttf-inconsolata-nerd']
+    name: ['sudo', 'firefox', 'chromium', 'ttf-inconsolata', 'ttf-inconsolata-nerd', 'ttf-noto-nerd']
     state: latest
   tags:
     - install

@@ -58,3 +58,9 @@
     dest: "{{ lookup('env', 'HOME') }}/.config/hypr"
     state: link
   tags: *wmtags
+- name: sym link waybar config 
+  file:
+    src: "{{ lookup('env', 'HOME') }}/.dotfiles/waybar"
+    dest: "{{ lookup('env', 'HOME') }}/.config/waybar"
+    state: link
+  tags: *wmtags
