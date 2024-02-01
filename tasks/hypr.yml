@@ -49,7 +49,6 @@
     dest: "{{ lookup('env','HOME') }}/tofi"
   tags: *wmtags
 - name: Install app launcher - build 
-  become: true
   shell: "cd {{ lookup('env','HOME') }}/tofi && meson build && ninja -C build install"
   tags: *wmtags
 - name: sym link hyperconfig
