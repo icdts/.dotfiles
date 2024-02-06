@@ -7,6 +7,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
+vim.opt.foldenable = false
 
 vim.opt.wrap = false
 
@@ -42,6 +43,4 @@ vim.o.clipboard = 'unnamedplus'
 -- case insensitive search unless capitals are used
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
-
 
